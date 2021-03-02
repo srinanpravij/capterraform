@@ -28,8 +28,8 @@ variable "cluster_ca_certificate" {
 }
 
 provider "kubernetes" {
-  host        = "https://127.0.0.1:33241"
-  config_path = "/home/ubuntu/.kube/config"
+  host        = "https://54.172.235.35:6443"
+  config_path = "/home/ubuntu/capterraform/kubecluster/tfflask.conf"
 }
 
 provider "docker" {
@@ -59,7 +59,7 @@ resource "kubernetes_deployment" "cpflask" {
       }
       spec {
         container {
-          image = "vijaya81kp/tfflaskapp"
+          image = "vijaya81kp/capterrapp"
           name  = "example"
 
           port {
